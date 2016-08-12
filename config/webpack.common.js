@@ -5,9 +5,9 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'polyfills': './app/polyfills.ts',
-    'vendor': './app/vendor.ts',
-    'app': './app/main.ts'
+    'polyfills': './src/polyfills.ts',
+    'vendor': './src/vendor.ts',
+    'app': './src/main.ts'
   },
 
   resolve: {
@@ -37,12 +37,18 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        include: helpers.root('assets'),
-        loader: 'style!css!sass'
+        include: helpers.root('src','app'),
+        loader: 'raw!sass'
       },
       {
         test: /\.css$/,
+        exclude: helpers.root('src','app'),
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+      },
+      {
+        test: /\.css$/,
+        include: helpers.root('src','app'),
+        loader: 'raw'
       }
     ]
   },
@@ -55,12 +61,12 @@ module.exports = {
 
     // tslint errors are displayed by default as warnings
     // set emitErrors to true to display them as errors
-    emitErrors: false,
+    emitErrors: true,
 
     // tslint does not interrupt the compilation by default
     // if you want any file with tslint errors to fail
     // set failOnHint to true
-    failOnHint: true,
+    failOnHint: false,
 
     // name of your formatter (optional)
     //formatter: "yourformatter",
@@ -95,7 +101,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'src/index.html'
     })
   ]
 };
