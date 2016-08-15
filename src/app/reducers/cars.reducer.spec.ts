@@ -5,6 +5,7 @@ import {
 import { Action } from '@ngrx/store';
 import  carsReducer from './cars.reducer';
 import { Car } from '../models/car';
+import { CarActions } from '../actions';
 describe('carsReducer',() => {
     it('Should return application state',() => {
         let car:Car = {
@@ -16,14 +17,11 @@ describe('carsReducer',() => {
             rating: 3,
             price: 25000
         };
-        
-       // let carState: fromCars.CarState = {
-      //      ids: ['1'],
-       //     entities: { [car] }
-       // };
          
-         const state = carsReducer(car,{type:null,payload:null});
+        let state = carsReducer(undefined,{type:null,payload:null});
         expect(state).not.toBe(null);
-      //  expect(true).toBe(true);
+        state = carsReducer(undefined,{type:CarActions.CAR_ADDED,payload:car});
+        expect(state.ids[0]).toBe("1");
+        expect(state.entities[1].id).toBe("1");
     });
 });
