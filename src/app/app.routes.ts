@@ -1,9 +1,11 @@
 import { provideRouter, RouterConfig } from '@angular/router';
-import { TestComponent } from './components/test';
+import { AddComponent } from './components/add';
+import { GetComponent } from './components/get';
 
 const routes: RouterConfig = [
-{ path: '', redirectTo: 'test', pathMatch: 'full' },
-{ path: 'test', component: TestComponent }
+{ path: '', redirectTo: 'add', pathMatch: 'full' },
+{ path: 'add', component: AddComponent },
+{ path: 'get', component: GetComponent}
 
 ];
 

@@ -1,4 +1,5 @@
-import { TestComponent } from './test';
+import { AddComponent } from './add';
+import { GetComponent } from './get';
 
-export { TestComponent };
-export default [ TestComponent ];
+export { AddComponent, GetComponent };
+export default [ AddComponent, GetComponent ];

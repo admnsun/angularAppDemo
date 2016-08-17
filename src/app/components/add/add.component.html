@@ -1,0 +1,22 @@
+<header>
+<h1>Add a Vehicle</h1>
+</header>
+<form (ngSubmit)='add()'>
+    <div class="form-group">
+        <label for="Make">Make</label>
+        <input class="form-control" name="Make" [(ngModel)]="car.make">
+        <label for="Model">Model</label>
+        <input class="form-control" name="Model" [(ngModel)]="car.model">
+        <label for="Year">Year</label>
+        <input class="form-control" name="Year" [(ngModel)]="car.year">
+        <label for="Type">Type</label>
+        <input class="form-control" name="Type" [(ngModel)]="car.type">
+        <label for="Rating">Rating</label>
+        <input class="form-control" name="Rating" [(ngModel)]="car.rating">
+        <label for="Price">Price</label>
+        <input class="form-control" name="Price" [(ngModel)]="car.price">
+    </div>
+    <div class="form-group">
+        <input type="submit" class='form-control btn btn-primary' value='Add Car'/>
+    </div>
+</form>
