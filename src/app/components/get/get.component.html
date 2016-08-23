@@ -1,7 +1,20 @@
-<div *ngFor='let car of cars | async'>
-    <p>{{car.make}}</p>
-    <p>{{car.model}}</p>
-    <p>{{car.year}}</p>
-    <p>{{car.rating}}</p>
-    <p>{{car.price}}</p>
+<div>
+<table class="displaytable" *ngFor='let car of cars | async'>
+    <tr>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Type</th>
+    <th>Rating</th>
+    <th>Price</th>
+    </tr>
+    <tr>
+    <td>{{car.make}}</td>
+    <td>{{car.model}}</td>
+    <td>{{car.year}}</td>
+    <td>{{car.type}}</td>
+    <td>{{car.rating}}</td>
+    <td>{{car.price}}</td>
+</tr>
+</table>
 </div>

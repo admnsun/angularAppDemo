@@ -12,11 +12,14 @@ export interface CarState{
 
 export default compose(combineReducers)({
     cars:carsReducer
+   // CarState
 });
 
 export function getCarState(){
-    return (state$: Observable<CarState>) => state$
+    return (state$: Observable<CarState>) => 
+        state$
     .select(s => s.cars);
+    
 }
 
 export function getCars(carIds:string[]){
@@ -32,3 +35,4 @@ export function getCarsCollection() {
     .let(getCarIds())
     .switchMap(carIds => state$.let(getCars(carIds)));
 }
+

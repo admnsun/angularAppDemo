@@ -15,12 +15,13 @@ let initialState: CarState ={
 };
 export default function reducer(state: CarState = initialState, action: Action): CarState {
     switch (action.type) {
-        case CarActions.ADD_CAR:      
+        case CarActions.CAR_ADDED:      
             return {
                 ids: [action.payload.id, ...state.ids],
-                entities: Object.assign({}, state.entities, { [action.payload.id]: action.payload })
+             entities: Object.assign({}, state.entities, { [action.payload.id]: action.payload })
+              // entities: Object.assign({}, state.entities,  action.payload )
             };
-        case CarActions.CAR_ADDED:
+        case CarActions.ADD_CAR:
             return state;
         default:
             return state;
@@ -39,12 +40,7 @@ export function getCars(carIds: string[]) {
 }
 
 export function getCarIds() {
-    return (state$: Observable<CarState>) => state$
-    .select(s => s.ids);
+   return (state$: Observable<CarState>) => state$
+    .select(s =>  s.ids);
 }
 
-export function getCarsCollection() {
-    return (state$: Observable<CarState>) => state$
-    .let(getCarIds())
-    .switchMap(carIds => state$.let(getCars(carIds)));
-}

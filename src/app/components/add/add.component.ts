@@ -14,12 +14,12 @@ import { CarState } from '../../reducers';
 
 export class AddComponent implements OnInit{
     constructor(private store: Store<CarState>, private actions: CarActions){ 
-        this.store.dispatch(this.actions.addCar({make:"Toy",model:"Ridgeline"}));
+        
     }
     car: Car = {make: ''};
     ngOnInit(){}
     add(){
         console.log("Adding", this.car);
-        this.store.dispatch(this.actions.addCar(this.car));
+       this.store.dispatch(this.actions.carAdded(this.car));
     }
 }

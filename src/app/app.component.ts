@@ -16,12 +16,12 @@ import { runEffects } from '@ngrx/effects';
 @Component({
   selector: 'my-app',
   directives: [ROUTER_DIRECTIVES, StoreLogMonitorComponent],
-  providers: [provideStore([reducers]),instrumentStore({monitor:useLogMonitor({visible:false,position:"bottom"})}),runEffects([CarEffects]), HTTP_PROVIDERS, APP_ROUTER_PROVIDERS, CarActions],
+  providers: [provideStore(reducers),instrumentStore({monitor:useLogMonitor({visible:false,position:"bottom"})}),runEffects([CarEffects]), HTTP_PROVIDERS, APP_ROUTER_PROVIDERS, CarActions],
  // providers: [HTTP_PROVIDERS, APP_ROUTER_PROVIDERS],
   template: require('./app.component.html')
 })
 export class AppComponent {
     constructor(private store: Store<CarState>, private actions: CarActions){
-
+ //this.store.dispatch(this.actions.carAdded({make:"Toy",model:"Ridgeline"}));
     }
  }
