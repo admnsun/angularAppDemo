@@ -10,7 +10,17 @@
         <label for="Year">Year</label>
         <input class="form-control" name="Year" [(ngModel)]="car.year">
         <label for="Type">Type</label>
-        <input class="form-control" name="Type" [(ngModel)]="car.type">
+        <select class="form-control" name="Type" [(ngModel)]="car.type">
+            <option value="Convertible">Convertible</option>
+            <option value="Coupe">Coupe</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="SUV">SUV</option>
+            <option value="Pickup">Pickup</option>
+            <option value="Van">Van</option>
+        </select>
         <label for="Rating">Rating</label>
         <input class="form-control" name="Rating" [(ngModel)]="car.rating">
         <label for="Price">Price</label>

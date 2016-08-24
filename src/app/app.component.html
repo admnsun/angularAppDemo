@@ -2,8 +2,16 @@
 <header>
     <h1>Automobile Comparison Shopping</h1>
 </header>
-<nav><a routerLink = "/add">Add a vehicle</a></nav>
-<nav><a routerLink = "/get">List vehicles</a></nav>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <form class="navbar-form navbar-left">
+        <ul class="nav navbar-nav navbar-left">
+<li><a routerLink = "/add">Add a vehicle</a></li>
+<li><a routerLink = "/get">List vehicles</a></li>
+        </ul>
+        </form>
+</div>
+</nav>
 <router-outlet></router-outlet>
 <ngrx-store-log-monitor toggleCommand="shift-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>
 </div>

@@ -1,20 +1,12 @@
-<div>
-<table class="displaytable" *ngFor='let car of cars | async'>
-    <tr>
-    <th>Make</th>
-    <th>Model</th>
-    <th>Year</th>
-    <th>Type</th>
-    <th>Rating</th>
-    <th>Price</th>
-    </tr>
-    <tr>
-    <td>{{car.make}}</td>
-    <td>{{car.model}}</td>
-    <td>{{car.year}}</td>
-    <td>{{car.type}}</td>
-    <td>{{car.rating}}</td>
-    <td>{{car.price}}</td>
-</tr>
-</table>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4" style="float:left" *ngFor='let car of cars | async'>
+    <label for="Make">Make:     </label>{{car.make}}<br>
+   <label for="Model">Model:    </label>{{car.model}}<br>
+    <label for="Year">Year:     </label>{{car.year}}<br>
+    <label for="Type">Type:     </label>{{car.type}}<br>
+  <label for="Rating">Rating:   </label>{{car.rating}} Stars<br>
+   <label for="Price">Price:    </label>{{car.price | currency: 'USD':true}}<br>
+        </div>
+    </div>
 </div>

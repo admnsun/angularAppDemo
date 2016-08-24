@@ -10,6 +10,7 @@ import { APP_ROUTER_PROVIDERS } from './app.routes';
 import { CarActions } from './actions/car.action';
 import { CarEffects } from './effects';
 import { runEffects } from '@ngrx/effects';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -17,7 +18,7 @@ import { runEffects } from '@ngrx/effects';
   selector: 'my-app',
   directives: [ROUTER_DIRECTIVES, StoreLogMonitorComponent],
   providers: [provideStore(reducers),instrumentStore({monitor:useLogMonitor({visible:false,position:"bottom"})}),runEffects([CarEffects]), HTTP_PROVIDERS, APP_ROUTER_PROVIDERS, CarActions],
- // providers: [HTTP_PROVIDERS, APP_ROUTER_PROVIDERS],
+  styles: [require('./components/get/get.component.css')],
   template: require('./app.component.html')
 })
 export class AppComponent {

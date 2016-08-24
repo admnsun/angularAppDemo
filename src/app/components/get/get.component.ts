@@ -7,6 +7,7 @@ import { getCarsCollection } from '../../reducers';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+
 @Component({
     moduleId: module.id,
     selector: 'get',
