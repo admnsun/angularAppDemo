@@ -22,7 +22,18 @@
             <option value="Van">Van</option>
         </select>
         <label for="Rating">Rating</label>
-        <input class="form-control" name="Rating" [(ngModel)]="car.rating">
+        <select class="form-control" name="Rating" [(ngModel)]="car.rating">
+            <option value=".5">.5 Star</option>
+            <option value="1">1 Star</option>
+            <option value="1.5">1.5 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="2.5">2.5 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="3.5">3.5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="4.5">4.5 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
         <label for="Price">Price</label>
         <input class="form-control" name="Price" [(ngModel)]="car.price">
     </div>
