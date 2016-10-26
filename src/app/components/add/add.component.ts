@@ -6,7 +6,7 @@ import reducers from '../../reducers';
 import { CarState } from '../../reducers';
 
 @Component({
-    moduleId: module.id,
+    moduleId: module.id.toString(),
     selector: 'add',
     template: require('./add.component.html'),
     styles: [require('./add.component.css')]

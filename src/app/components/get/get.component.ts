@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 
 @Component({
-    moduleId: module.id,
+    moduleId: module.id.toString(),
     selector: 'get',
     template: require('./get.component.html')
 })

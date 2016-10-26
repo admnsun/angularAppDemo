@@ -1,5 +1,5 @@
 import {
-    addProviders,
+    TestBed,
     inject,
     async
 } from '@angular/core/testing';
@@ -15,7 +15,7 @@ import { getCars } from '../reducers';
 import { Observable } from 'rxjs/Observable';
 describe('carsReducer',() => {
     beforeEach(()=>
-    addProviders([{provide: provideStore([fromCars]),Store}]));
+    TestBed.configureTestingModule([{provide: provideStore([fromCars]),Store}]));
     it('Should return application state',
     async(inject([Store],(store:Store<CarState>) => {
         let car:Car = {

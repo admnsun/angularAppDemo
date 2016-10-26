@@ -1,14 +1,12 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AddComponent } from './components/add';
 import { GetComponent } from './components/get';
 
-const routes: RouterConfig = [
+const routes: Routes = [
 { path: '', redirectTo: 'add', pathMatch: 'full' },
 { path: 'add', component: AddComponent },
 { path: 'get', component: GetComponent}
 
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-    provideRouter(routes)
-];
+export const routing: any = RouterModule.forRoot(routes);
