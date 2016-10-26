@@ -22,6 +22,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 })
 export class AppComponent {
     constructor(private store: Store<CarState>, private actions: CarActions, public router:Router ){
+      this.router.events.subscribe(
+        (event:Event)=>{if (event instanceof NavigationEnd){window['optimizely']||[]; window['optimizely'].push({type:'page',pageName:event.urlAfterRedirects.split('/')[3]});}}
+        );      
  //this.store.dispatch(this.actions.carAdded({make:"Toy",model:"Ridgeline"}));
     }
  }
