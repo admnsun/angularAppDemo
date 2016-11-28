@@ -13,7 +13,7 @@
   },
   "license": "ISC",
   "dependencies": {
-   "@angular/common": "~2.1.0",
+    "@angular/common": "~2.1.0",
     "@angular/compiler": "~2.1.0",
     "@angular/core": "~2.1.0",
     "@angular/forms": "~2.1.0",
@@ -63,6 +63,7 @@
     "normalize.css": "^3.0.3",
     "null-loader": "^0.1.1",
     "protractor-cucumber": "^0.1.8",
+    "protractor-cucumber-framework": "^0.6.0",
     "raw-loader": "^0.5.1",
     "require-dir": "^0.3.0",
     "rimraf": "^2.5.2",

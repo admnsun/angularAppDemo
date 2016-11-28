@@ -1,10 +1,17 @@
 exports.config = {
-    specs: [
-        '*.spec.js'
-    ],
+    seleniumAddress: 'http://localhost:4444/wd/hub',
+    getPageTimeout: 60000,
+    allScriptsTimeout: 500000,
     framework: 'custom',
     frameworkPath: 'node_modules/protractor-cucumber-framework',
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    capabilities: {
+        'browserName': 'chrome'
+    },
+    specs: [
+        'features/*.feature'
+    ],
+   
+    
     cucumberOpts: {
        // require: '*.spec.js',
         format: 'pretty'
